@@ -3,6 +3,9 @@
 
 2、动态代理
 
+blog:
+http://blog.csdn.net/fenglibing/article/details/7080340
+
 1）jdk
 不用依赖其他包，主要是利用jdk中的反射来实现AOP，只能代理接口，不能代理继承类
 
