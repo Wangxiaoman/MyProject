@@ -31,6 +31,5 @@
 	<classpathentry kind="lib" path="/Users/wangxiaoman/jar/sevenzip4j.jar"/>
 	<classpathentry kind="lib" path="/Users/wangxiaoman/jar/netty-all-5.0.0.Alpha1.jar" sourcepath="/Users/wangxiaoman/jar/netty-all-5.0.0.Alpha1.jar"/>
 	<classpathentry kind="lib" path="/Users/wangxiaoman/Programs/jetty-hightide-8.1.9.v20130131/lib/servlet-api-3.0.jar"/>
-	<classpathentry kind="lib" path="src/lib/servlet-api-3.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
