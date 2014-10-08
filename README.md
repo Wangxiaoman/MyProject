@@ -10,7 +10,7 @@ http://blog.csdn.net/fenglibing/article/details/7080340
 不用依赖其他包，主要是利用jdk中的反射来实现AOP，只能代理接口，不能代理继承类
 
 2）cglib
-依赖cglib包，利用类增加的方式。通过一个子类来实现目标类，然后覆盖需要AOP的方法实现代码增强，不局限代理接口
+依赖cglib包，利用类增加的方式。通过一个子类来实现目标类，然后覆盖需要AOP的方法实现代码增强，不局限代理接口.<br>
 cglib封装了asm，可以在运行期动态生成新的class
 
 3）javassist
