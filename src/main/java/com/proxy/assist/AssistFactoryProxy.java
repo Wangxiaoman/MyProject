@@ -1,6 +1,8 @@
-package com.proxy;
+package com.proxy.assist;
 
 import java.lang.reflect.Method;
+
+import com.proxy.SimpleClass;
 
 import javassist.util.proxy.MethodHandler;
 import javassist.util.proxy.ProxyFactory;
@@ -8,7 +10,7 @@ import javassist.util.proxy.ProxyObject;
 /**
  * 
  * @author wangxiaoman
- * 工厂创建动态代理例子,和jdk、cglib的方式类似
+ * 工厂创建动态代理例子,和cglib的方式类似，生成一个当前类的子类，并覆盖需要AOP的方法。
  *
  */
 public class AssistFactoryProxy {

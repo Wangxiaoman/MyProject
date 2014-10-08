@@ -43,6 +43,12 @@
 			<artifactId>javassist</artifactId>
 			<version>3.18.1-GA</version>
 		</dependency>
+		<!-- cglib -->
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>3.1</version>
+		</dependency>
 		
 	   <dependency>
 	     	<groupId>org.eclipse.jetty</groupId>

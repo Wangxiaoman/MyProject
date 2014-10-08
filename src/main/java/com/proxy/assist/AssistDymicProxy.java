@@ -1,11 +1,12 @@
-package com.proxy;
+package com.proxy.assist;
 
 import javassist.ClassPool;
 import javassist.CtClass;
-import javassist.CtConstructor;
 import javassist.CtField;
 import javassist.CtNewConstructor;
 import javassist.CtNewMethod;
+
+import com.proxy.SimpleClass;
 
 /**
  * 
