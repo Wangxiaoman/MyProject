@@ -22,3 +22,4 @@ cglib封装了asm，可以在运行期动态生成新的class
     //添加方法，动态调用，实现AOP
 		ct.addMethod(CtNewMethod.make("public void execute(){ System.out.println(\"before:\"); "
 				+ " real.execute();  System.out.println(\"after!\");}", ct));
+与ASM的区别，其实理论上的实现方式基本相同，都是字节码增强的技术。不过ASM编写比较困难，需要手工写字节码，而javassist直接写代码串即可
