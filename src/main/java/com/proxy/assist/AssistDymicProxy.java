@@ -34,7 +34,8 @@ public class AssistDymicProxy {
 		ct.addField(CtField.make("public " + className + " real = new "+ className + "();", ct));
 		//添加方法，动态调用，实现AOP
 		
-		ct.addMethod(CtNewMethod.make("public void execute(){ System.out.println(\"before:\");  real.execute();  System.out.println(\"after!\");}", ct));
+		ct.addMethod(CtNewMethod.make("public void execute(){ System.out.println(\"before:\"); "
+				+ " real.execute();  System.out.println(\"after!\");}", ct));
 	
 		Class<SimpleClass> proxyClass = ct.toClass();
 		
