@@ -231,9 +231,9 @@ public class OpeSQLTemplate {
 	// ////////////////////////////////批量提交测试/////////////////////////////////////////////////////////
 
 	// 批量操作参数 rewriteBatchedStatements=true
-	private static String url = "jdbc:mysql://192.168.2.202:3306/analytics?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&rewriteBatchedStatements=true";
-	private static String user = "wasp";
-	private static String password = "sankuai123";
+	private static String url = "jdbc:mysql://localhost:3306/analytics?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&rewriteBatchedStatements=true";
+	private static String user = "root";
+	private static String password = "root";
 	private static String driver = "com.mysql.jdbc.Driver";
 
 	/**
