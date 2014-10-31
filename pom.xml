@@ -122,6 +122,18 @@
 			<version>1.8.1</version>
 		</dependency>
 		
+		<!-- oauth -->
+		<dependency>
+		  <groupId>oauth</groupId>
+		  <artifactId>qq_oauth_service</artifactId>
+		  <version>4.0</version>
+		</dependency>
+		<dependency>
+		  <groupId>oauth</groupId>
+		  <artifactId>weibo_oauth_service</artifactId>
+		  <version>3.1.1</version>
+		</dependency>
+		
 	</dependencies>
 	
 	<build>
