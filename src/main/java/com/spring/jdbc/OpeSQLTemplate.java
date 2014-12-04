@@ -162,28 +162,23 @@ public class OpeSQLTemplate {
 						Method attrSetter = entry.getValue();
 						// System.out.println("attrName:"+attrName+" attrSetter:"+attrSetter.getName()+"feild type:"+fieldType);
 						// 反射调用，set属性
-						if ("String".equals(fieldType)) {
-							attrSetter.invoke(
-									t,
-									rs.getString(attrName) == null ? "" : rs
-											.getString(attrName));
-						} else if ("Date".equals(fieldType)) {
-							attrSetter.invoke(t,
-									rs.getDate(attrName) == null ? "1970-01-01"
-											: rs.getDate(attrName));
-						} else if ("Integer".equals(fieldType)
-								|| "int".equals(fieldType)) {
-							attrSetter.invoke(t, rs.getInt(attrName));
-						} else if ("Long".equals(fieldType)
-								|| "long".equals(fieldType)) {
-							attrSetter.invoke(t, rs.getLong(attrName));
-						} else if ("Double".equals(fieldType)
-								|| "double".equals(fieldType)) {
-							attrSetter.invoke(t, rs.getDouble(attrName));
-						} else if ("Boolean".equals(fieldType)) {
-							attrSetter.invoke(t, rs.getBoolean(attrName));
+						try{
+							if ("String".equals(fieldType)) {
+								attrSetter.invoke(t,rs.getString(attrName));
+							} else if ("Date".equals(fieldType)) {
+								attrSetter.invoke(t,rs.getDate(attrName));
+							} else if ("Integer".equals(fieldType)|| "int".equals(fieldType)) {
+								attrSetter.invoke(t, rs.getInt(attrName));
+							} else if ("Long".equals(fieldType)|| "long".equals(fieldType)) {
+								attrSetter.invoke(t, rs.getLong(attrName));
+							} else if ("Double".equals(fieldType)|| "double".equals(fieldType)) {
+								attrSetter.invoke(t, rs.getDouble(attrName));
+							} else if ("Boolean".equals(fieldType)) {
+								attrSetter.invoke(t, rs.getBoolean(attrName));
+							}
+						}catch(SQLException e){
+							continue;
 						}
-
 					}
 					return t;
 				} catch (IllegalArgumentException e) {
