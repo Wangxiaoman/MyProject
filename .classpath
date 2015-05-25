@@ -12,25 +12,16 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="src/main/resources"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry including="**/*.java" kind="src" path="src/main/resources"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/wangxiaoman/jar/gnucrypto-1.0.jar"/>
-	<classpathentry kind="lib" path="/Users/wangxiaoman/jar/unrar-decryption-supported-20120613.jar"/>
-	<classpathentry kind="lib" path="/Users/wangxiaoman/jar/sevenzipjbinding-AllPlatforms.jar"/>
-	<classpathentry kind="lib" path="/Users/wangxiaoman/jar/sevenzipjbinding.jar"/>
-	<classpathentry kind="lib" path="/Users/wangxiaoman/jar/commons-lang3-3.1.jar"/>
-	<classpathentry kind="lib" path="/Users/wangxiaoman/jar/j7zip-0.0.1.jar"/>
-	<classpathentry kind="lib" path="/Users/wangxiaoman/jar/sevenzip4j.jar"/>
-	<classpathentry kind="lib" path="/Users/wangxiaoman/jar/netty-all-5.0.0.Alpha1.jar" sourcepath="/Users/wangxiaoman/jar/netty-all-5.0.0.Alpha1.jar"/>
-	<classpathentry kind="lib" path="/Users/wangxiaoman/Programs/jetty-hightide-8.1.9.v20130131/lib/servlet-api-3.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
