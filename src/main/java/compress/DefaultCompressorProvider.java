@@ -25,8 +25,8 @@ class DefaultCompressorProvider implements CompressorProvider{
 		compressorMap.put(CompressFormat.ZIP.getName(), zipCompressor);
 		compressorMap.put(CompressFormat.WAR.getName(), new WARCompressor(zipCompressor));
 		compressorMap.put(CompressFormat.GZIP.getName(), new GZIPCompressor());
-		compressorMap.put(CompressFormat.RAR.getName(), new RARCompressor());
-		compressorMap.put(CompressFormat.SEVENZ.getName(), new SevenZCompressor());
+//		compressorMap.put(CompressFormat.RAR.getName(), new RARCompressor());
+//		compressorMap.put(CompressFormat.SEVENZ.getName(), new SevenZCompressor());
 		compressorMap.put(CompressFormat.TAR.getName(), new TARCompressor());
 	}
 
