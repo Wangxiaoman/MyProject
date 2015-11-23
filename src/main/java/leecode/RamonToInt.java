@@ -45,5 +45,7 @@ public class RamonToInt {
 		
 		System.out.println(sl.romanToInt("VII")); 
 		System.out.println(sl.romanToInt("DIV")); 
+		
+		System.out.println(2/10);
 	}
 }
