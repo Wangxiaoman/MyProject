@@ -1,5 +1,6 @@
 package leecode;
 //回文数
+//将这个数的回文数先算出来，然后比对这两个数
 public class Palindrome {
 	public static boolean isPalindrome(int x) {
 		if(x<0){

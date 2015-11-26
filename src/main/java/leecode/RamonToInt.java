@@ -1,5 +1,8 @@
 package leecode;
 
+//罗马数字 -> 阿拉伯数字
+//如果是左面的数字比右边小，那么需要减去；反之，则加上，比如 VI -> 6,IV -> 4
+
 public class RamonToInt {
 	public class Solution {
 	    public int romanToInt(String s) {
