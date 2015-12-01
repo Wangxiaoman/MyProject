@@ -3,6 +3,9 @@ package leecode;
 
 public class ReverseNumber {
 	public static int reverse(int x) {
+		if(x <= Integer.MIN_VALUE){
+			return 0;
+		}
        int absx = Math.abs(x);
        String xstr = new StringBuffer(String.valueOf(absx)).reverse().toString();
     	if(Long.valueOf(xstr)>Integer.MAX_VALUE){
