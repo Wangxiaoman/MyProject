@@ -1,4 +1,7 @@
 package leecode;
+
+
+
 /**
  * 
  * number:258
