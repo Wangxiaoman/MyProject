@@ -32,6 +32,7 @@ public class ValidAnagram {
 				return false;
 			}
 		}
+		//return ta.toString().equals(sa.toString());
 		
 		return true;
     }
