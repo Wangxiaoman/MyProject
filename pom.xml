@@ -173,15 +173,25 @@
 			<artifactId>junrar</artifactId>
 			<version>0.7</version>
 		</dependency>
-
-				
 		
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>1.9.13</version>
 		</dependency>
-				
+		
+<!-- 		<dependency> -->
+<!-- 	      <groupId>io.vertx</groupId> -->
+<!-- 	      <artifactId>vertx-core</artifactId> -->
+<!-- 	      <version>3.1.0</version> -->
+<!-- 	    </dependency> -->
+	    
+<!-- 	    <dependency> -->
+<!-- 	      <groupId>io.vertx</groupId> -->
+<!-- 	      <artifactId>web-examples</artifactId> -->
+<!-- 	      <version>3.1.0</version> -->
+<!-- 	    </dependency> -->
+	    
 	</dependencies>
 	
 	<build>
