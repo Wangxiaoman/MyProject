@@ -17,7 +17,7 @@ public class TwoNumber {
         }
         
         
-        Arrays.sort(n, new Comparator<Node>(){
+        Arrays.sort(n,new Comparator<Node>(){
 			@Override
 			public int compare(Node o1, Node o2) {
 				return o1.getVal()-o2.getVal();
