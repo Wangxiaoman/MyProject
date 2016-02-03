@@ -6,7 +6,7 @@
 	<artifactId>Myproject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	
+
 	<properties>
 		<java-version>1.7</java-version>
 		<mtframework.version>1.1.0</mtframework.version>
@@ -22,7 +22,7 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- Apache文件压缩功能库依赖 -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -36,7 +36,7 @@
 			<artifactId>zip4j</artifactId>
 			<version>1.3.2</version>
 		</dependency>
-		
+
 		<!-- javassist -->
 		<dependency>
 			<groupId>org.javassist</groupId>
@@ -56,14 +56,14 @@
 			<version>3.10.1</version>
 		</dependency>
 		<dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.7</version>
-        </dependency>
-        <dependency>
-		    <groupId>com.alibaba</groupId>
-		    <artifactId>fastjson</artifactId>
-		    <version>1.1.38</version>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.1.38</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
@@ -75,17 +75,17 @@
 			<artifactId>guava</artifactId>
 			<version>10.0.1</version>
 		</dependency>
-	   <dependency>
-	     	<groupId>org.eclipse.jetty</groupId>
-	     	<artifactId>jetty-server</artifactId>
-	     	<version>8.1.9.v20130131</version>
-	   </dependency>
-	   <dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-server</artifactId>
+			<version>8.1.9.v20130131</version>
+		</dependency>
+		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-webapp</artifactId>
 			<version>8.1.9.v20130131</version>
 		</dependency>
-		
+
 		<!-- jsch 远端调用shell -->
 		<dependency>
 			<groupId>com.jcraft</groupId>
@@ -108,14 +108,14 @@
 			<artifactId>httpasyncclient</artifactId>
 			<version>4.1</version>
 		</dependency>
-				
+
 		<dependency>
 			<groupId>commons-dbutils</groupId>
 			<artifactId>commons-dbutils</artifactId>
 			<version>1.6</version>
 		</dependency>
-       <!-- spring -->
-       <dependency>
+		<!-- spring -->
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>3.2.4.RELEASE</version>
@@ -155,74 +155,82 @@
 			<artifactId>netty-all</artifactId>
 			<version>4.0.23.Final</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.commons</groupId>
-		  <artifactId>commons-lang3</artifactId>
-		  <version>3.3.2</version>
-	  </dependency>
-			
+			<artifactId>commons-lang3</artifactId>
+			<version>3.3.2</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.jsoup</groupId>
 			<artifactId>jsoup</artifactId>
 			<version>1.8.1</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.github.junrar</groupId>
 			<artifactId>junrar</artifactId>
 			<version>0.7</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>1.9.13</version>
 		</dependency>
-		
+
 		<dependency>
-	      <groupId>io.vertx</groupId>
-	      <artifactId>vertx-core</artifactId>
-	      <version>3.1.0</version>
-	    </dependency>
+			<groupId>io.vertx</groupId>
+			<artifactId>vertx-core</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ecyrd.speed4j</groupId>
+			<artifactId>speed4j</artifactId>
+			<version>0.18</version>
+		</dependency>
+
 	</dependencies>
-	
+
 	<build>
 		<plugins>
-	      <plugin>
-	        <groupId>org.apache.maven.plugins</groupId>
-	        <artifactId>maven-shade-plugin</artifactId>
-	        <executions>
-	          <execution>
-	            <id>make-assembly</id>
-	            <phase>package</phase>
-	            <goals>
-	              <goal>shade</goal>
-	            </goals>
-	            <configuration>
-	              <filters>
-                     <filter>
-                         <artifact>*:*</artifact>
-                         <excludes>
-                             <exclude>META-INF/*.SF</exclude>
-                             <exclude>META-INF/*.DSA</exclude>
-                             <exclude>META-INF/*.RSA</exclude>
-                         </excludes>
-                     </filter>
-                  </filters>
-	              <transformers>
-                   	<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                   	 <mainClass>com.maslow.open.sdk.DemoApiTool</mainClass>
-                  	</transformer>
-                  </transformers>
-	              <descriptorRefs>
-	                <descriptorRef>jar-with-dependencies</descriptorRef>
-	              </descriptorRefs>
-	            </configuration>
-	          </execution>
-	        </executions>
-	      </plugin>
-	    </plugins>
-    </build>
-	
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<filters>
+								<filter>
+									<artifact>*:*</artifact>
+									<excludes>
+										<exclude>META-INF/*.SF</exclude>
+										<exclude>META-INF/*.DSA</exclude>
+										<exclude>META-INF/*.RSA</exclude>
+									</excludes>
+								</filter>
+							</filters>
+							<transformers>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>com.maslow.open.sdk.DemoApiTool</mainClass>
+								</transformer>
+							</transformers>
+							<descriptorRefs>
+								<descriptorRef>jar-with-dependencies</descriptorRef>
+							</descriptorRefs>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>
