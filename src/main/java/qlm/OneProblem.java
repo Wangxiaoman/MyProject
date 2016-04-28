@@ -1,4 +1,4 @@
-package qianlima;
+package qlm;
 /**
  * 第2333个能被2或者被3整除的正整数
  * @author xiaoman
