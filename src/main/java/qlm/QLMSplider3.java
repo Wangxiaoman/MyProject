@@ -48,13 +48,28 @@ public class QLMSplider3 {
       }
     }
   }
+  
+  public static void run(int i){
+    new Thread(new Runnable() {
+      @Override
+      public void run() {
+        try {
+          System.out.println("index"+i+"start !");
+          System.out.println("index:" + i + ",update second:" + getUpdateTime(i));
+          System.out.println("index next:" + i + ",update second:" + getUpdateTime(i));
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+      }
+      
+    }).start();
+  }
 
   public static void main(String[] args) throws IOException {
     try {
-      for (int i = 6; i <= 10; i++) {
-        System.out.println("index:" + i + ",update second:" + getUpdateTime(i));
-        System.out.println("index:" + i + ",update second:" + getUpdateTime(i));
-      }
+      run(3);
+      run(4);
+      run(6);
     } catch (Exception e) {
       e.printStackTrace();
     }
