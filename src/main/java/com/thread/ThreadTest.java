@@ -22,10 +22,55 @@ public class ThreadTest {
 		}
 	}
 	
-	public static void main(String[] args) throws InterruptedException {
-		new Thread(new Runner()).start();
-		Thread.sleep(100);
-		number = 40;
-		flag = true;
+	public static class TestRunner implements Runnable{
+		private Test test;
+		private int type;
+		public TestRunner(Test test,int type){
+			this.test = test;
+			this.type = type;
+		}
+		
+		@Override
+		public void run() {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			if(type == 1){
+				test.task1();
+			}else{
+				test.task2();
+			}
+		}
 	}
+	
+	public static void main(String[] args) throws InterruptedException {
+		Test test = new Test();
+		
+		new Thread(new TestRunner(test,2)).start();
+		new Thread(new TestRunner(test,1)).start();
+		
+		
+		System.out.println(test.a);
+		System.out.println(test.b);
+		System.out.println(test.x);
+		System.out.println(test.y);
+	}
+	
+	
 }
+
+
+class Test {  
+    int x = 0, y = 0;  
+    int a = 0, b = 0;  
+    public void task1() {  
+        a = 1;  
+        x = b;  
+    }  
+    public void task2() {  
+        b = 1;  
+        y = a;  
+    }  
+}  
