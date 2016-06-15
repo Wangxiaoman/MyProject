@@ -54,9 +54,6 @@ public class QLMSplider3 {
       @Override
       public void run() {
         try {
-          System.out.println("index"+i+"start !");
-          System.out.println("index:" + i + ",update second:" + getUpdateTime(i));
-          System.out.println("index next:" + i + ",update second:" + getUpdateTime(i));
         } catch (Exception e) {
           e.printStackTrace();
         }
