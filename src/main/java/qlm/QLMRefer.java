@@ -1,11 +1,13 @@
 package qlm;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import com.ecyrd.speed4j.StopWatch;
+
 import http.HttpClientUtils;
 import http.Request;
 import http.Response;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * 代码提交500，用curl
@@ -60,7 +62,17 @@ public class QLMRefer {
   }
   
   public static void main(String[] args) {
-    post();
+	  StopWatch s = new StopWatch();
+	  s.start();
+	  s.setTag("one method");
+//    post();
+	  test();
+    s.stop();
+    System.out.println(s);
+  }
+  
+  public static void test(){
+	  System.out.println("123123");
   }
 
 }

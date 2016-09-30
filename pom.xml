@@ -218,6 +218,13 @@
 			<version>0.9.3</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.netflix.hystrix</groupId>
+			<artifactId>hystrix-core</artifactId>
+			<version>1.5.5</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
