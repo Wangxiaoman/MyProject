@@ -1,4 +1,4 @@
-package com;
+package com.thread;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,10 +42,25 @@ public class ThreadPool {
 	}
 	
 	public static void main(String[] args) {
-		Executor ex = Executors.newFixedThreadPool(5);
-		Executor ex1 = Executors.newCachedThreadPool();
-		Executor ex2 = Executors.newScheduledThreadPool(5);
-		Executor ex3 = Executors.newSingleThreadExecutor();
+	    ExecutorService es = Executors.newFixedThreadPool(5);
+	    for(int i=0;i<10;i++){
+    		es.submit(new Runnable() {
+                @Override
+                public void run() {
+                    System.out.println("111");
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+	    }
+		
+		
+//		Executor ex1 = Executors.newCachedThreadPool();
+//		Executor ex2 = Executors.newScheduledThreadPool(5);
+//		Executor ex3 = Executors.newSingleThreadExecutor();
 		
 	}
 
