@@ -205,6 +205,18 @@
 			<artifactId>speed4j</artifactId>
 			<version>0.18</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>com.janeluo</groupId>
+		    <artifactId>ikanalyzer</artifactId>
+		    <version>2012_u6</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.chenlb.mmseg4j</groupId>
+		    <artifactId>mmseg4j-core</artifactId>
+		    <version>1.10.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>com.github.stuxuhai</groupId>
