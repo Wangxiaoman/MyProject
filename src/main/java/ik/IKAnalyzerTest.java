@@ -8,16 +8,16 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.wltea.analyzer.core.IKSegmenter;
 import org.wltea.analyzer.core.Lexeme;
 
-import com.alibaba.fastjson.JSONObject;
-
 public class IKAnalyzerTest {
     public static void main(String[] args) {
-        segMore("看来词库还挺丰富的，速度非常快。以后分词就用IK了，简单好用。就讲到这里了，顺便AD下，大家多多支持本人新站：礼品网");
+        segMore("看来词库还挺丰富的，速度非常快。以后分词就用IK了，简单好用。就讲到这里了，顺便AD下，大家多多支持本人新站：礼品网,"
+                + "看来词库还挺丰富的，速度非常快。以后分词就用IK了"
+                + "看来词库还挺丰富的，速度非常快。以后分词就用IK了，简单好用。就讲到这里了");
     }
 
     public static void segMore(String text) {
-        System.out.println("智能切分:"+JSONObject.toJSONString(segText(text, true)));
-        System.out.println("细粒度切分"+JSONObject.toJSONString(segText(text, false)));
+        System.out.println("智能切分:"+segText(text, true));
+        System.out.println("细粒度切分"+segText(text, false));
         System.out.println(segTextBuffer(text, true));
     }
     
