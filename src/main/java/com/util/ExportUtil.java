@@ -23,6 +23,7 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.ClientAnchor;
 
 public class ExportUtil {
 	/**
@@ -114,7 +115,7 @@ public class ExportUtil {
         bufferImg = ImageIO.read(new File( url )); 
         ImageIO.write(bufferImg,"jpg",byteArrayOut);
         HSSFClientAnchor anchor = new HSSFClientAnchor(0, 0,1023, 255, (short) col, row, (short) col, row);
-        anchor.setAnchorType(3);
+        anchor.setAnchorType(ClientAnchor.AnchorType.byId(3));
         //插入图片
         patriarch.createPicture(anchor , workbook.addPicture(byteArrayOut.toByteArray(),HSSFWorkbook.PICTURE_TYPE_JPEG));
         byteArrayOut.flush();
