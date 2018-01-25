@@ -78,6 +78,8 @@ public class MD5 {
 	
 	public static void main(String[] args) {
     System.out.println(getMD5CodeWithSalt("monitormark"));
+    System.out.println(getMD5Code("fffe59655ba5dd05"));
+    
   }
 
 }
