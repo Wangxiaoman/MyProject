@@ -33,6 +33,11 @@ public class ThreadTest {
 		@Override
 		public void run() {
 			try {
+			    String a = "test";
+			    String b = new String("test");
+			    System.out.println(a.hashCode());
+			    System.out.println("identityHashCode a："+System.identityHashCode(a));
+			    System.out.println("identityHashCode b："+System.identityHashCode(b));
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
