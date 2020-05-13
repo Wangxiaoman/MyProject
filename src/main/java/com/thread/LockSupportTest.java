@@ -50,7 +50,7 @@ public class LockSupportTest {
         System.out.println(Thread.currentThread().getName() + " block");
         // 主线程阻塞
         LockSupport.park(mainThread);
-
+        
         System.out.println(Thread.currentThread().getName() + " continue");
     }
 

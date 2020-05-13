@@ -1,7 +1,5 @@
 package common.rpc;
 
-import com.google.common.base.Objects;
-
 /**
  * 服务调用异常及出错信息
  */
@@ -55,10 +53,5 @@ public class InvokeException extends RuntimeException {
 
     public String getMessage() {
         return message;
-    }
-
-    @Override
-    public String toString() {
-        return Objects.toStringHelper(this).add("code", code).add("type", type).add("message", message).toString();
     }
 }
