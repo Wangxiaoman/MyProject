@@ -33,7 +33,7 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-compress</artifactId>
-			<version>1.5</version>
+			<version>1.19</version>
 		</dependency>
 		<!-- Java解压RAR文件功能库依赖 -->
 		<!-- zip带密码压缩解压文件库 -->
