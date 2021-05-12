@@ -4,11 +4,8 @@
 package leecode;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
-import org.springframework.util.CollectionUtils;
 
 /**
  * @author linkedme 561

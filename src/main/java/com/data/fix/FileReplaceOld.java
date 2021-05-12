@@ -1,4 +1,4 @@
-package com;
+package com.data.fix;
 
 import java.io.File;
 import java.nio.charset.Charset;
@@ -21,14 +21,13 @@ import com.google.common.base.Splitter;
 import com.google.common.io.CharSink;
 import com.google.common.io.Files;
 
-import lombok.Data;
 import net.sourceforge.pinyin4j.PinyinHelper;
 import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType;
 import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
 import net.sourceforge.pinyin4j.format.HanyuPinyinToneType;
 
 
-public class FileReplace {
+public class FileReplaceOld {
     public static List<String> files = new ArrayList<>();
     static {
         files.add("page/home/ocrHome.vue");
@@ -138,7 +137,7 @@ public class FileReplace {
     private static String basePath = "/Users/xiaomanwang/workspace/aidrug-font/src/";
 
     // 已经处理好的中英文对照文件
-    private static String lineEnFileName = "/Users/xiaomanwang/资料/front-english/front-chinese-line-en.txt";
+    private static String lineEnFileName = "/Users/xiaomanwang/资料/front-en-release/old/front-ch-en-line.txt";
     
     
     public static Set<String> getFileCn(File file) throws Exception {
@@ -260,7 +259,7 @@ public class FileReplace {
         // 解析文件做替换
         for (String fName : files) {
             File f = new File(basePath + fName);
-            File fnew = new File(basePath + fName + "-new");
+//            File fnew = new File(basePath + fName + "-new");
 
             // 整个文件替换英文
             List<String> lineContents = fileCnEnMap.get(fName);
@@ -285,7 +284,7 @@ public class FileReplace {
                 }
 
                 // 写入到一个新文件中
-                CharSink sink = Files.asCharSink(fnew, Charsets.UTF_8);
+                CharSink sink = Files.asCharSink(f, Charsets.UTF_8);
                 sink.writeLines(newLines);
             }
         }
@@ -304,11 +303,11 @@ public class FileReplace {
 
     public static void replaceLineFile() throws Exception {
         // 翻译结果的文件
-        String fName = "/Users/xiaomanwang/资料/front-english/front-ch-en-result.txt";
+        String fName = "/Users/xiaomanwang/资料/front-en-release/old/front-old-en.txt";
         // 带有行的中文抽取文件
-        String lineFileName = "/Users/xiaomanwang/资料/front-english/front-chinese-line.txt";
+        String lineFileName = "/Users/xiaomanwang/资料/front-en-release/old/front-old-line.txt";
         // 匹配生成带有行的英文翻译的文件
-        String lineEnFileName = "/Users/xiaomanwang/资料/front-english/front-chinese-line-en.txt";
+        String lineEnFileName = "/Users/xiaomanwang/资料/front-en-release/old/front-ch-en-line.txt";
 
         // 获取中英翻译的KV集合
         File enFile = new File(fName);
@@ -376,6 +375,26 @@ public class FileReplace {
         }
         return pybf.toString();
     }
+    
+    
+    public static void checkHashtag() throws Exception{
+        String fileName = "/Users/xiaomanwang/资料/front-en-release/old/front-old-en.txt";
+        File file = new File(fileName);
+        List<String> lines = Files.readLines(file, Charset.defaultCharset());
+        if(!CollectionUtils.isEmpty(lines)) {
+            for(String l : lines) {
+                int count = 0;
+                for(int i=0;i<l.length();i++) {
+                    if(l.charAt(i) == '#') {
+                        count = count + 1;
+                    }
+                }
+                if(count >=2 ) {
+                    System.out.println(l);
+                }
+            }
+        }
+    }
 
 
 
@@ -387,7 +406,7 @@ public class FileReplace {
         // 获取每行的中文
 //         getLineChinese();
 
-        // 获取去重的中文
+//         获取去重的中文
 //         getUniqChinese();
 
         // 模拟英文结果
@@ -397,26 +416,8 @@ public class FileReplace {
 //         replaceLineFile();
 
         // 将英文的行文件，替换生成新文件
-        replaceEnToFile();
-
-    }
-}
-
-
-@Data
-class LineData {
-    private int lineNum;
-    private String en;
-    private String ch;
-
-    public LineData() {}
-
-    public LineData(String line) {
-        List<String> contents = Splitter.on("#").splitToList(line);
-        if (!CollectionUtils.isEmpty(contents) && contents.size() == 3) {
-            this.lineNum = Integer.valueOf(contents.get(0));
-            this.ch = contents.get(1);
-            this.en = contents.get(2);
-        }
+//        replaceEnToFile();
+        
+        checkHashtag();
     }
 }
