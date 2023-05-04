@@ -12,7 +12,6 @@ import javax.crypto.spec.GCMParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
 import org.codehaus.plexus.util.FileUtils;
-import org.springframework.util.Base64Utils;
 
 import com.github.luben.zstd.Zstd;
 
@@ -35,7 +34,8 @@ public class ZstdUtil {
             byte[] resultByte = new byte[random.length + bytes1.length];
             System.arraycopy(random, 0, resultByte, 0, random.length);
             System.arraycopy(bytes1, 0, resultByte, random.length, bytes1.length);
-            return Base64Utils.encodeToString(resultByte);
+            return Base64.getEncoder().encodeToString(resultByte);
+//            return Base64Utils.encodeToString(resultByte);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -44,7 +44,8 @@ public class ZstdUtil {
 
     public static String getDecryptContext(String sourceContext) {
         try {
-            byte[] base64array = Base64Utils.decodeFromString(sourceContext);
+            byte[] base64array = Base64.getDecoder().decode(sourceContext);
+//            byte[] base64array = Base64Utils.decodeFromString(sourceContext);
             final byte[] iv = Arrays.copyOfRange(base64array, 0, 12);
             final byte[] pass = Arrays.copyOfRange(base64array, 12, base64array.length);
             final GCMParameterSpec ivSpec = new GCMParameterSpec(128, iv);
